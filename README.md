@@ -1,2 +1,2 @@
 # SampleYii2Project
-Same project using Yii 2.0
+Sample project using Yii 2.0
