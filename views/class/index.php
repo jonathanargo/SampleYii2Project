@@ -27,9 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
             // TODO - add teacher name
-            'id',
             'name',
             [
                 'class' => ActionColumn::className(),
