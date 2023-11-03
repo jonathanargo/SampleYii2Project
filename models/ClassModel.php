@@ -50,7 +50,7 @@ class ClassModel extends \app\models\ProjectActiveRecord
             'id' => 'ID',
             'name' => 'Name',
             'schedule' => 'Schedule',
-            'teacher_id' => 'Teacher ID',
+            'teacher_id' => 'Teacher',
         ];
     }
 

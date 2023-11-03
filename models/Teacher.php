@@ -64,4 +64,17 @@ class Teacher extends ProjectActiveRecord
     {
         return $this->hasMany(ClassModel::class, ['teacher_id' => 'id']);
     }
+
+    /**
+     * Returns array of list data of eligible teachers for use in forms.
+     */
+    public static function getTeacherListData(): array
+    {
+        $teachers = Teacher::find()->indexBy('id')->all();
+        $result = [];
+        foreach ($teachers as $teacher) {
+            $result[$teacher->id] = $teacher->name;
+        }
+        return $result;
+    }
 }

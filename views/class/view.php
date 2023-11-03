@@ -31,9 +31,23 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
+            [
+                'label' => 'Teacher',
+                'value' => $model->getTeacher()->one()->name,
+            ],
             'schedule',
-            'teacher_id',
+            
         ],
     ]) ?>
 
+    <label>Students</label>
+    <table class="table table-striped table-boardered">
+        <tbody>
+            <?php foreach ($model->getStudents()->all() as $student): ?>
+                <tr>
+                    <td><?php echo Html::encode($student->name); ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </div>
