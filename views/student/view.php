@@ -36,4 +36,15 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+    <strong>Classes</strong>
+    <table class="table table-striped table-boardered">
+        <tbody>
+            <?php foreach ($model->getClasses()->all() as $class): ?>
+                <tr>
+                    <td><?php echo Html::encode($class->name); ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
 </div>
