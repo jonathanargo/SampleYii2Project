@@ -70,6 +70,7 @@ class TeacherController extends Controller
     {
         $model = new Teacher();
 
+        // TODO - handle validation errors
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
@@ -94,6 +95,7 @@ class TeacherController extends Controller
     {
         $model = $this->findModel($id);
 
+        // TODO - handle validation errors
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
@@ -112,6 +114,7 @@ class TeacherController extends Controller
      */
     public function actionDelete($id): Response
     {
+        // TODO - handle validation errors
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
