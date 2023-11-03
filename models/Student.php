@@ -3,6 +3,10 @@
 namespace app\models;
 
 use Yii;
+use app\models\ProjectActiveRecord;
+
+use app\models\ClassModel;
+use app\models\Enrollment;
 
 /**
  * This is the model class for table "student".
@@ -10,8 +14,9 @@ use Yii;
  * @property int $id
  * @property string $name
  * @property int $year
+ * @property string|null $address
  */
-class Student extends \yii\db\ActiveRecord
+class Student extends ProjectActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -30,6 +35,7 @@ class Student extends \yii\db\ActiveRecord
             [['name', 'year'], 'required'],
             [['year'], 'integer', 'min' => 1, 'max' => 4],
             [['name'], 'string', 'max' => 255],
+            [['address'], 'string'],
         ];
     }
 
@@ -42,17 +48,27 @@ class Student extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
             'year' => 'Year',
+            'address' => 'Address',
         ];
     }
 
-    public function getErrorsFlat(): array
-    {
-        $result = [];
-        foreach ($this->getErrors() as $attribute => $errors) {
-            foreach ($errors as $error) {
-                $result[] = $error;
-            }
-        }
-        return $result;
-    }
+    /** 
+    * Returns a query for class relations 
+    * 
+    * @return \yii\db\ActiveQuery 
+    */ 
+   public function getClasses() 
+   { 
+       return $this->hasMany(ClassModel::class, ['id' => 'class_id'])->viaTable('enrollment', ['student_id' => 'id']); 
+   } 
+ 
+   /** 
+    * Returns a query for enrollment relations 
+    * 
+    * @return \yii\db\ActiveQuery 
+    */ 
+   public function getEnrollments() 
+   { 
+       return $this->hasMany(Enrollment::class, ['student_id' => 'id']); 
+   } 
 }
