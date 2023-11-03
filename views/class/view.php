@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
-    <label>Students</label>
+    <strong>Students</strong>
     <table class="table table-striped table-boardered">
         <tbody>
             <?php foreach ($model->getStudents()->all() as $student): ?>
