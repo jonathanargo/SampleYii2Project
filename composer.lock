@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b5c862323efeef5dd84ad5c71161cc5",
+    "content-hash": "772e2e451822aead045fa7a783d56c3e",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -20,6 +20,81 @@
                 "reference": "cb021439c683d9805e2864c58095b92d405e9b11"
             },
             "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/inputmask",
+            "version": "5.0.8",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:RobinHerbots/Inputmask.git",
+                "reference": "e0f39e0c93569c6b494c3a57edef2c59313a6b64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/e0f39e0c93569c6b494c3a57edef2c59313a6b64",
+                "reference": "e0f39e0c93569c6b494c3a57edef2c59313a6b64"
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset",
+            "license": [
+                "http://opensource.org/licenses/mit-license.php"
+            ]
+        },
+        {
+            "name": "bower-asset/jquery",
+            "version": "3.6.4",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:jquery/jquery-dist.git",
+                "reference": "91ef2d8836342875f2519b5815197ea0f23613cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/91ef2d8836342875f2519b5815197ea0f23613cf",
+                "reference": "91ef2d8836342875f2519b5815197ea0f23613cf"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/punycode",
+            "version": "v2.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mathiasbynens/punycode.js.git",
+                "reference": "46d412120e2feb868876769a9847790ba278c882"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mathiasbynens/punycode.js/zipball/46d412120e2feb868876769a9847790ba278c882",
+                "reference": "46d412120e2feb868876769a9847790ba278c882"
+            },
+            "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/yii2-pjax",
+            "version": "2.0.8",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:yiisoft/jquery-pjax.git",
+                "reference": "a9298d57da63d14a950f1b94366a864bc62264fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/a9298d57da63d14a950f1b94366a864bc62264fb",
+                "reference": "a9298d57da63d14a950f1b94366a864bc62264fb"
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.8"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "cebe/markdown",
@@ -5532,8 +5607,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4.0",
-        "composer-plugin-api": "*"
+        "php": ">=7.4.0"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"
