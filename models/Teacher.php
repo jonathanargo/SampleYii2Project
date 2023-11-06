@@ -66,6 +66,18 @@ class Teacher extends ProjectActiveRecord
     }
 
     /**
+     * Returns formatted phone number, e.g. (555)123-4567
+     */
+    public function getFormattedPhoneNumber(): string
+    {
+        $areaCode = substr($this->phone, 0, 3);
+        $firstThree = substr($this->phone, 3, 3);
+        $remainder = substr($this->phone, 6);
+        $value = "($areaCode) $firstThree-$remainder";
+        return $value;
+    }
+
+    /**
      * Returns array of list data of eligible teachers for use in forms.
      */
     public static function getTeacherListData(): array
